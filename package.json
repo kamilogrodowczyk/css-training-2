@@ -1,0 +1,38 @@
+{
+  "name": "waxom",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build:scss": "node-sass --output-style compressed -o dest/styles src/styles | postcss dest/styles/index.css -u autoprefixer -r",
+    "watch:scss": "onchange -v 'src/styles/*.scss' -- npm run build:scss",
+    "lint:js": "eslint --fix src/js/*.js",
+    "watch:js": "onchange -v 'src/js/*.js' -- npm run lint:js",
+    "start": "browser-sync -s -f 'index.html, dest/**/*, src/**/*'",
+    "watch:all": "parallelshell 'npm start' 'npm run watch:scss' 'npm run watch:js'"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^10.2.1",
+    "browser-sync": "^2.26.13",
+    "node-sass": "^5.0.0",
+    "onchange": "^7.1.0",
+    "parallelshell": "^3.0.1",
+    "post-cli": "^1.0.5",
+    "postcss": "^8.2.4",
+    "postcss-cli": "^8.3.1",
+    "watch": "^1.0.2"
+  },
+  "dependencies": {
+    "eslint": "^7.18.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-plugin-react": "^7.22.0"
+  },
+  "browserslist": [
+    "last 4 version",
+    "> 1%",
+    "IE 10"
+  ]
+}

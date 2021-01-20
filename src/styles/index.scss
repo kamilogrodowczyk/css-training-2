@@ -1,0 +1,179 @@
+@import 'config';
+@import 'utils';
+
+
+.header {
+
+    @include background(url('../../src/assets/mountain.jpg'));
+    filter: grayscale(50%);
+    width: 100%;
+    height: 100vh;
+
+    &__container {
+        @include container(0);
+        @include flex(space-between, center);
+        height: 10vh;
+
+        .header__logo {
+            @include flex(flex-start, center);
+            
+            .header__container--image {
+                width: 20%;
+            }
+        }
+
+        .nav__links {
+            @include flex(flex-end, center);
+
+            .nav__link {
+                padding: 0 1rem;
+
+                & a:hover {
+                    color: $bg-color;
+                }
+            }
+        }
+
+        .nav__icons {
+            width: 1rem;
+            height: 1rem;
+            fill: $light-text;
+
+            &--bag {
+                margin-left: 1rem;
+            }
+
+            &--glass {
+                margin-left: .7rem;
+            }
+
+            &:hover {
+                fill: $bg-color;
+            }
+        }
+    }
+
+    .hero__container {
+        @include container(0);
+        @include color-font($white: false);
+        @include flex(center, center);
+        flex-direction: column;
+        height: 90vh;
+        text-align: center;
+        text-shadow: 1px 1px 2px $dark-text;
+    }
+}
+
+.about {
+    @include container(5rem);
+    @include grid(space-around, center);
+    grid-template-columns: repeat(2, 22rem);
+    justify-items: center;
+    gap: 2rem;
+
+    &__containers {
+        height: 100%;
+        text-align: center;
+        width: 100%;
+        padding: 0 1rem;
+        
+
+        .about__icon {
+            width: 3rem;
+            height: 3rem;
+        }
+    }
+}
+
+.realization {
+    // @include container(0); 
+    height: 70vh;
+    width: 100%;
+    background-color: lighten($bg-color, 52%);
+
+    &__container {
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        position: relative;
+
+        .realization__text--main {
+            max-width: 30rem;
+            margin: 0 auto;
+        }
+
+        .realization__images--one {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1;
+            max-width: 50%;
+        }
+        .realization__images--two {
+            position: absolute;
+            bottom: -15%;
+            left: 10%;
+            max-width: 50%;
+        }
+        .realization__images--three {
+            position: absolute;
+            bottom: -15%;
+            left: 45%;
+            max-width: 50%;
+        }
+        .realization__accent {
+            position: absolute;
+            top: 99%;
+            left: 0;
+            right: 0;
+            background: linear-gradient(90deg, rgba(34,34,34,1) 0%, rgba(71,43,15,1) 88%);
+            z-index: 2;
+            @include flex(space-around, center);
+            height: 70%;
+
+            .realization__text {
+                text-align: left;
+                @include color-font($white: false);
+                max-width: 100%;
+                padding: 0 1rem;
+        }
+        .realization__text h3 span {
+            color: $bg-color;
+        }
+    }
+    }
+}
+
+
+
+
+
+
+@media screen and (max-width: 1000px) {
+    .nav {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 786px) {
+    .about {
+        grid-template-columns: repeat(1, 1fr);
+
+        &__containers {
+            padding: 0 10%;
+        }
+    }
+
+    .realization__accent {
+        flex-direction: column;
+        justify-items: center;
+    }
+
+    .realization__text {
+        text-align: center;
+        @include color-font($white: false);
+        max-width: 100%;
+        padding: 0 1rem;
+}
+}
