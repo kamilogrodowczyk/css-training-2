@@ -18,20 +18,24 @@ $bg-color: 	#917457;
     color: $light-text;
     text-shadow: 1px 1px 2px $dark-text;
     margin-bottom: 2rem;
+    white-space: nowrap;
+}
+
+.text__header {
+    max-width: 50rem;
+    margin: 0 auto;
 }
 
 @mixin flex($justify, $align) {
     display: flex;
     justify-content: $justify;
     align-items: $align;
-    height: 100%;
 }
 
 @mixin grid($justify, $align) {
     display: grid;
     justify-content: $justify;
     align-items: $align;
-    height: 100%;
 }
 
 @mixin background($url) {
@@ -46,4 +50,8 @@ $bg-color: 	#917457;
     } @else {
         color: $light-text;
     }
+}
+
+@mixin visibility() {
+    display: none;
 }
