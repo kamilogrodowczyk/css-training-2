@@ -1,6 +1,7 @@
 $light-text: white;
 $dark-text: #222;
-$bg-color: 	#917457;
+$bg-color: 	#52473d;
+$bg-color-light: lighten($bg-color, 70%);
 
 @mixin container($margin-y) {
     max-width: 1400px;
@@ -25,6 +26,10 @@ $bg-color: 	#917457;
     max-width: 50rem;
     margin: 0 auto;
 }
+
+// @function color() {
+
+// }
 
 @mixin flex($justify, $align) {
     display: flex;
@@ -54,4 +59,9 @@ $bg-color: 	#917457;
 
 @mixin visibility() {
     display: none;
+}
+
+.dark-hover {
+    background-color: $bg-color;
+    color: $light-text;
 }
