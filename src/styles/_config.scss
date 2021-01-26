@@ -47,6 +47,7 @@ $bg-color-light: lighten($bg-color, 70%);
     background-image: $url;
     background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
 }
 
 @mixin color-font($white: true) {
