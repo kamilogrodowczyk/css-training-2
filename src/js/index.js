@@ -19,6 +19,7 @@ function debounce(func, wait, immediate) {
 }
 
 let timer;
+let isDown = false;
 
 function mouse(e) {
 	const styledButton = button.style;
@@ -48,6 +49,16 @@ function handleProgress() {
 }
 
 player.addEventListener('mousemove', debounce(mouse));
+player.addEventListener('touchstart', (e) => {
+	isDown = true;
+	console.log(e)
+});
+player.addEventListener('touchmove', (e) => {
+	if(isDown) {
+		debounce(mouse);
+	} else return;
+	console.log(e)
+});
 player.addEventListener('click', togglePlay);
 
 player.addEventListener('play', handleButton);

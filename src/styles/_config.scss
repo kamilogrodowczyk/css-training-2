@@ -1,7 +1,8 @@
 $light-text: white;
 $dark-text: #222;
 $bg-color: 	#52473d;
-$bg-color-light: lighten($bg-color, 70%);
+$bg-color-brighter: lighten($bg-color, 70%);
+$bg-color-bright: lighten($bg-color, 30%);
 
 @mixin container($margin-y) {
     max-width: 1400px;
@@ -60,6 +61,17 @@ $bg-color-light: lighten($bg-color, 70%);
 
 @mixin visibility() {
     display: none;
+}
+
+@mixin paragraph-margin($sibling: true) {
+    @if $sibling {
+        margin-bottom: 1rem;        
+        &:last-of-type {
+            margin-bottom: 3rem; 
+        }
+    } @else {
+        margin-bottom: 3rem;
+    }
 }
 
 .dark-hover {

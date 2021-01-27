@@ -96,7 +96,7 @@
 
 .realization {
     width: 100%;
-    background-color: $bg-color-light;
+    background-color: $bg-color-brighter;
 
     .realization__container {
         width: 100%;
@@ -193,8 +193,8 @@
         margin: 0 auto;
 
         @media screen and (max-width: 786px) {
-                width: 80%;
-                flex-wrap: wrap;
+            width: 80%;
+            flex-wrap: wrap;
         }
 
         .portfolio__button--select {
@@ -235,7 +235,7 @@
 
         .portfolio__gallery {
             height: 100%;
-            background-color: $bg-color-light;
+            background-color: $bg-color-brighter;
             @include flex(center, flex-start);
             flex-direction: column;
 
@@ -282,15 +282,24 @@
 }
 
 .video {
-    @include container(3rem);
+    @include container(0);
     width: 100%;
-    height: 100%;
+    // height: 100%;
     position: relative;
 
+    &:hover .video__controls {
+        transform: translateY(-50px);
+        opacity: 1;
+
+        @media screen and (max-width: 786px) {
+            transform: translateY(-30px);
+        }
+    }
+
     .video__container {
-        min-width: 100%;
-        max-height: 100%;
-        object-fit: cover;
+        width: 100%;
+        height: 100%;
+        // object-fit: cover;
         filter: brightness(.7);
         outline: none;
         cursor: none;
@@ -299,8 +308,8 @@
     .video__button {
         @include background(url('../../src/assets/play.png'));
         background-size: auto;
-        width: 150px;
-        height: 150px;
+        width: 8rem;
+        height: 8rem;
         border-radius: 50%;
         background-color: rgba(0,0,0,0.3);
         position: absolute;
@@ -309,17 +318,145 @@
         display: none;
         transform: translate(-50%, -50%);
         border: none;
+
+        @media screen and (max-width: 786px) {
+            background-size: 80%;
+            width: 4rem;
+            height: 4rem;
+        }
     }
 
     .video__controls {
-        background-color: coral;
-        width: 100%;
-        height: 10px;
+        background-color: rgba(0,0,0,0.5);
+        width: 90%;
+        height: 7px;
+        border-radius: 3px;
+        position: absolute;
+        opacity: 0;
+        left: 5%;
+        transform: translateY(0);
+        transition: all 1s ease-in-out;
 
         .video__progress {
-            background-color: yellow;
+            background-color: rgba(0,0,0,0.8);
             width: 0;
             height: 100%;
+            border-radius: inherit;
+        }
+    }
+}
+
+.info {
+    height: 100%;
+    padding-top: 6rem;
+    background-color: $bg-color-brighter;
+
+    .info__container {
+        @include container(0);
+        @include flex(space-between, center);
+        height: 100%;
+
+        @media screen and (max-width: 786px) {
+            width: 80%;
+            flex-direction: column;
+            flex-wrap: wrap;
+        }
+        
+        .info__image {
+            align-self: flex-end;
+
+            @media screen and (max-width: 786px) {
+                align-self: center;
+                max-width: 80%;
+            }
+        }
+    
+        .info__text {
+            flex: 2;
+            padding: 0 .5rem;
+
+            @media screen and (max-width: 786px) {
+                order: -1;
+            }
+            
+        }
+    
+        .info__details {
+            // padding-left: 3rem;
+    
+            p {
+                position: relative;
+                padding-left: 2rem;
+                @include paragraph-margin($sibling: true);
+                &::before {
+                    content: '';
+                    @include background(url('../../src/assets/next.png'));
+                    background-size: .8rem;
+                    background-position: 65% 50%;
+                    background-color: #adb8c2;
+                    filter: invert(1);
+                    border-radius: 50%;
+                    position: absolute;
+                    left: 0;
+                    top: calc(2ex / 4);
+                    display: block;
+                    width: 1.2rem;
+                    height: 1.2rem;
+                }  
+            }   
+        }
+    }
+
+    .info__accent {
+        width: 100%;
+        background: linear-gradient(90deg, rgba(34,34,34,1) 0%, rgba(71,43,15,1) 88%);
+
+        .info__accent-container {
+            @include flex(space-around, center);
+            @include container(0);
+            padding: 0 1rem;
+
+            @media screen and (max-width: 786px) {
+                @include flex(space-around, center);
+                flex-wrap: wrap;
+            }
+
+            .info__data {
+                text-align: center;
+                padding-top: 3rem;
+
+                @media screen and (max-width: 786px) {
+                    flex-basis: 15rem;
+                }
+                
+                .info__icon {
+                    width: 3rem;
+                    height: 3rem;
+                    fill: $bg-color-bright;
+
+                }
+        
+                .info__number {
+                    font-weight: 300;
+                    color: white;
+                }
+        
+                .info__number-text {
+                    text-transform: uppercase;
+                    letter-spacing: .3px;
+                    color: $bg-color-bright;
+
+                    &:after {
+                        content: '';
+                        width: 3rem;
+                        height: 3px;
+                        border-radius: 3px;
+                        background-color: white;
+                        display: block;
+                        margin: 1.5rem auto 0;
+                    }
+                }
+            }
         }
     }
 }
