@@ -1,0 +1,113 @@
+.info {
+    height: 100%;
+    padding-top: 7%;
+    background-color: $bg-color-brighter;
+
+    .info__container {
+        @include container(0);
+        @include flex(space-between, center);
+        height: 100%;
+
+        @media screen and (max-width: 786px) {
+            flex-direction: column;
+            flex-wrap: wrap;
+        }
+        
+        .info__image {
+            align-self: flex-end;
+
+            @media screen and (max-width: 786px) {
+                align-self: center;
+                max-width: 80%;
+            }
+        }
+    
+        .info__text {
+            flex: 2;
+            padding: 0 .5rem;
+
+            @media screen and (max-width: 786px) {
+                order: -1;
+            }
+            
+        }
+    
+        .info__details {
+            // padding-left: 3rem;
+    
+            p {
+                position: relative;
+                padding-left: 2rem;
+                @include paragraph-margin(3rem, $sibling: true);
+                &::before {
+                    content: '';
+                    @include background(url('../../src/assets/next.png'));
+                    background-size: .8rem;
+                    background-position: 65% 50%;
+                    background-color: #adb8c2;
+                    filter: invert(1);
+                    border-radius: 50%;
+                    position: absolute;
+                    left: 0;
+                    top: calc(2ex / 4);
+                    display: block;
+                    width: 1.2rem;
+                    height: 1.2rem;
+                }  
+            }   
+        }
+    }
+
+    .info__accent {
+        width: 100%;
+        background: linear-gradient(90deg, rgba(34,34,34,1) 0%, rgba(71,43,15,1) 88%);
+
+        .info__accent-container {
+            @include flex(space-around, center);
+            @include container(0);
+            padding: 0 1rem;
+
+            @media screen and (max-width: 786px) {
+                @include flex(space-around, center);
+                flex-wrap: wrap;
+            }
+
+            .info__data {
+                text-align: center;
+                padding-top: 3rem;
+
+                @media screen and (max-width: 786px) {
+                    flex-basis: 15rem;
+                }
+                
+                .info__icon {
+                    width: 3rem;
+                    height: 3rem;
+                    fill: $bg-color-bright;
+
+                }
+        
+                .info__number {
+                    font-weight: 300;
+                    color: white;
+                }
+        
+                .info__number-text {
+                    text-transform: uppercase;
+                    letter-spacing: .3px;
+                    color: $bg-color-bright;
+
+                    &:after {
+                        content: '';
+                        width: 3rem;
+                        height: 3px;
+                        border-radius: 3px;
+                        background-color: white;
+                        display: block;
+                        margin: 1.5rem auto 0;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,12 +1,19 @@
 $light-text: white;
 $dark-text: #222;
 $bg-color: 	#52473d;
-$bg-color-brighter: lighten($bg-color, 70%);
+$bg-color-brighter: lighten($bg-color, 68%);
 $bg-color-bright: lighten($bg-color, 30%);
 
-@mixin container($margin-y) {
-    max-width: 1400px;
+@mixin container($margin-y, $margin-b: true) {
+    max-width: 80vw;
+    @media screen and (max-width: 786px) {
+        max-width: 100vw;
+        padding: 0 .5rem;
+    }
     margin: $margin-y auto;
+    @if ($margin-b) {
+        margin: $margin-y auto $margin-b;
+    } 
 }
 
 .btn {
@@ -19,18 +26,14 @@ $bg-color-bright: lighten($bg-color, 30%);
     box-shadow: 2px 2px 0 lighten($bg-color, 10%);
     color: $light-text;
     text-shadow: 1px 1px 2px $dark-text;
-    margin-bottom: 2rem;
     white-space: nowrap;
 }
 
 .text__header {
     max-width: 50rem;
     margin: 0 auto;
+    text-align: center;
 }
-
-// @function color() {
-
-// }
 
 @mixin flex($justify, $align) {
     display: flex;
@@ -38,17 +41,26 @@ $bg-color-bright: lighten($bg-color, 30%);
     align-items: $align;
 }
 
-@mixin grid($justify, $align) {
+@mixin grid($justify, $align, $items: true) {
     display: grid;
     justify-content: $justify;
     align-items: $align;
+    @if($items) {
+        justify-items: center;
+    }
 }
 
-@mixin background($url) {
-    background-image: $url;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+@mixin background($url: true) {
+    @if($url) {
+        background-image: $url;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    } @else {
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
 }
 
 @mixin color-font($white: true) {
@@ -63,11 +75,11 @@ $bg-color-bright: lighten($bg-color, 30%);
     display: none;
 }
 
-@mixin paragraph-margin($sibling: true) {
+@mixin paragraph-margin($m-b, $sibling: true) {
     @if $sibling {
         margin-bottom: 1rem;        
         &:last-of-type {
-            margin-bottom: 3rem; 
+            margin-bottom: $m-b; 
         }
     } @else {
         margin-bottom: 3rem;

@@ -1,0 +1,82 @@
+.realization {
+    width: 100%;
+    background-color: $bg-color-brighter;
+
+    .realization__container {
+        @include container(0);
+        text-align: center;
+        position: relative;
+
+        .realization__header {
+            @extend .text__header;
+        }
+
+        .realization__images-middle {
+            min-width: 45%;
+            position: relative;
+            z-index: 1;
+
+            @media screen and (max-width: 786px) {
+                width: 90vw;
+            }
+
+        }
+        .realization__images-left {
+            position: absolute;
+            bottom: -5%;
+            left: 5%;
+            max-width: 50%;
+
+            @media screen and (max-width: 786px) {
+                @include visibility();
+            }
+
+        }
+        .realization__images-right {
+            @extend .realization__images-left;
+            bottom: -15%;
+            right: 5%;
+            left: auto;
+
+            @media screen and (max-width: 786px) {
+                @include visibility();
+            }
+
+        }
+    }
+
+    .realization__accent {
+        margin-top: -2rem;
+        background: linear-gradient(90deg, rgba(34,34,34,1) 0%, rgba(71,43,15,1) 88%);
+        position: relative;
+        z-index: 3;
+        @include flex(space-around, center);
+
+        @media screen and (max-width: 786px) {
+            flex-direction: column;
+        }
+
+        .realization__text {
+            text-align: left;
+            @include color-font($white: false);
+            max-width: 100%;
+            padding: 0 1rem;
+
+            @media screen and (max-width: 786px) {
+                text-align: center; 
+            }
+        }
+
+        .realization__button {
+            @extend .btn;
+            margin: 0;
+
+            @media screen and (max-width: 786px) {
+                margin-bottom: 2rem;
+            }
+        }
+        .realization__text h3 span {
+            color: $bg-color;
+        }
+    }
+}
