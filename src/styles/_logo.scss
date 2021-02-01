@@ -1,0 +1,58 @@
+.logo {
+	@include background(url('../../src/assets/canyon.jpg'));
+	height: 50vh;
+    width: 100%;
+    filter: grayscale(50%);
+    @include flex(center, center);
+}
+
+$animationSpeed: 10s;
+
+// Animation
+@keyframes scroll {
+	0% { transform: translateX(0); }
+	100% { transform: translateX(calc(-16rem * 6))}
+}
+
+
+// Styling
+.slider {
+	height: 100px;
+	overflow:hidden;
+	position: relative;
+	width: 70vw;
+	
+	&::before,
+	&::after {
+        box-shadow: 20px 9px 20px -5px black;
+		content: "";
+		height: 100px;
+        position: absolute;
+		width: 20px;
+		z-index: 2;
+	}
+	
+	&::after {
+		right: -20px;
+		top: 0;
+		transform: rotateZ(180deg);
+	}
+
+	&::before {
+		left: -20px;
+		top: 0;
+	}
+	
+	.slide-track {
+		animation: scroll $animationSpeed linear infinite;
+		display: flex;
+        width: calc(16rem * 12);
+	}
+	
+	.slide {
+		height: 16rem;
+        width: 16rem;
+        filter: invert(1);
+        text-shadow: 20px 9px 20px -5px black;
+	}
+}

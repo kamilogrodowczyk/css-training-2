@@ -43,7 +43,7 @@
                 padding: 0 1rem;
 
                 & a:hover {
-                    color: $bg-color;
+                    color: $bg-color-bright;
                 }
             }
         }
@@ -62,7 +62,7 @@
             }
 
             &:hover {
-                fill: $bg-color;
+                fill: $bg-color-bright;
             }
         }
     }
