@@ -61,6 +61,7 @@
     .info__accent {
         width: 100%;
         background: linear-gradient(90deg, rgba(34,34,34,1) 0%, rgba(71,43,15,1) 88%);
+        
 
         .info__accent-container {
             @include flex(space-around, center);

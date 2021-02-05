@@ -64,3 +64,43 @@ player.addEventListener('click', togglePlay);
 player.addEventListener('play', handleButton);
 player.addEventListener('pause', handleButton);
 player.addEventListener('timeupdate', handleProgress)
+
+const hamburger = document.querySelector('.nav__hamburger');
+const links = document.querySelector('.nav__links');
+
+const handleClick = () => {
+	const body = document.body;
+	links.classList.toggle('nav__links--active');
+
+	let flag = links.classList.contains('nav__links--active');
+	hamburger.setAttribute('aria-expanded', flag);
+
+	if ((flag) ? body.style.overflowY = 'hidden' : body.style.overflowY = 'scroll');
+	
+}
+
+hamburger.addEventListener('click', handleClick);
+
+
+const form = document.querySelector("form");
+const search = form.querySelector("input[type=search]");
+const icon = document.querySelector('.nav__icons-bag');
+
+form.addEventListener("submit", function (e) {
+  e.preventDefault();  
+	if(search.value !== '') {
+		window.open(`https://www.google.com/search?q=${search.value}`);
+	} else {
+		icon.animate([
+			{transform: 'rotate(0deg)'},
+			{transform: 'rotate(30deg)'},
+			{transform: 'rotate(0deg)'}
+		], {
+			duration: 700,
+			iterations: 2,
+			easing: 'ease-in-out'
+		});
+	}
+});
+
+

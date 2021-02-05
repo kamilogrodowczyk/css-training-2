@@ -27,6 +27,14 @@ $bg-color-bright: lighten($bg-color, 30%);
     color: $light-text;
     text-shadow: 1px 1px 2px $dark-text;
     white-space: nowrap;
+    cursor: pointer;
+    backface-visibility: hidden;
+    transition: transform .5s .1s ease-in-out, background-color .5s .1s ease-in-out;
+
+    &:hover {
+        background-color: lighten($bg-color, 10%);
+        transform: scale(1.05);
+    }
 }
 
 .text__header {

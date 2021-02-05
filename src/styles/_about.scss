@@ -1,9 +1,10 @@
 .about {
-    @include container(5rem);
+    @include container(3rem);
     @include grid(space-around, center);
     grid-template-columns: repeat(2, 22rem);
     justify-items: center;
     gap: 2rem;
+    position: relative;
 
     @media screen and (max-width: 786px) {
         grid-template-columns: repeat(1, 1fr);
