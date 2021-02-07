@@ -29,11 +29,15 @@ $bg-color-bright: lighten($bg-color, 30%);
     white-space: nowrap;
     cursor: pointer;
     backface-visibility: hidden;
-    transition: transform .5s .1s ease-in-out, background-color .5s .1s ease-in-out;
+    transition: transform .2s 0s ease-in-out, background-color .2s 0s ease-in-out;
 
     &:hover {
         background-color: lighten($bg-color, 10%);
         transform: scale(1.05);
+    }
+    &:active {
+        background-color: darken($bg-color, 10%);
+        box-shadow: 2px 2px 0 $bg-color;
     }
 }
 
@@ -97,4 +101,10 @@ $bg-color-bright: lighten($bg-color, 30%);
 .dark-hover {
     background-color: $bg-color;
     color: $light-text;
+}
+
+@mixin realizationTransition($scale, $translateY) {
+    transform: scale($scale) translateY($translateY);
+    z-index: 2;
+    transition: transform .2s ease-in-out;
 }

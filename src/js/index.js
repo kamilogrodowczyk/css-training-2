@@ -103,4 +103,44 @@ form.addEventListener("submit", function (e) {
 	}
 });
 
+const buttonRealization = document.querySelector('.realization__button');
+const images = document.querySelectorAll('.realization__image');
+
+	let index = 0;
+	const total = images.length;
+
+buttonRealization.addEventListener('click', () => {
+	images.forEach(image => image.classList.remove('realization__images--active'));
+	images[index].classList.add('realization__images--active')
+	index = (index + 1) % total;
+})
+
+const buttonPortfolio = document.querySelectorAll('.portfolio__button-select');
+const buttonLoad = document.querySelector('.portfolio__button');
+
+const gallery = [...document.querySelectorAll('.portfolio__gallery')];
+
+function selectElement(target) {	
+	gallery.forEach(function(el) {
+		el = [...document.querySelectorAll('.portfolio__text p')];
+		el.filter(function(p) {
+			if(p.textContent.includes(target)) {
+				p.parentNode.parentNode.classList.add('selected');
+			} else if (target.includes('All')) {
+				p.parentNode.parentNode.classList.add('selected');
+				buttonLoad.classList.add('selected');
+			} else {
+				p.parentNode.parentNode.classList.remove('selected');
+				buttonLoad.classList.remove('selected');
+			}
+		})
+		
+	})
+}
+
+buttonPortfolio.forEach(button => button.addEventListener('click', (e) => {
+	const target = e.target.textContent
+	selectElement(target)
+}))
+
 

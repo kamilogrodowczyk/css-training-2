@@ -25,13 +25,13 @@
             color: $bg-color;
             text-shadow: none;
             margin: 0 .25rem 2rem;
+            user-select: none;
 
             @media screen and (max-width: 786px) {
                 width: 10rem;
             }
 
             &:hover {
-                box-shadow: 2px 2px 0 lighten($bg-color, 10%);
                 @extend .dark-hover;
             }
         }
@@ -55,6 +55,13 @@
             background-color: $bg-color-brighter;
             @include flex(center, flex-start);
             flex-direction: column;
+            opacity: 0;
+            transition: opacity .5s ease-in-out;
+
+            &.selected {
+                opacity: 1;
+                transition: opacity .5s ease-in-out;
+            }
 
             &:hover {
                 @extend .dark-hover;
@@ -96,5 +103,12 @@
 
     .portfolio__button {
         @extend .btn;
+        opacity: 0;
+        transition: opacity .5s ease-in-out;
+
+        &.selected {
+            opacity: 1;
+            transition: opacity .5s .5s ease-in-out;
+        }
     }
 }
