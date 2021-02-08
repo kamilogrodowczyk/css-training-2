@@ -141,6 +141,8 @@ function selectElement(target) {
 buttonPortfolio.forEach(button => button.addEventListener('click', (e) => {
 	const target = e.target.textContent
 	selectElement(target)
+	buttonPortfolio.forEach(el => el.classList.remove('selected'))
+	e.target.classList.toggle('selected')
 }))
 
 

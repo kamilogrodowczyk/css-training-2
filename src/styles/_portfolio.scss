@@ -34,6 +34,10 @@
             &:hover {
                 @extend .dark-hover;
             }
+
+            &.selected {
+                @extend .dark-hover;
+            }
         }
     }
 
@@ -41,6 +45,7 @@
         @include grid(center, space-between);
         grid-template-columns: repeat(3, 1fr);
         gap: 2rem;
+        visibility: hidden;
 
         @media screen and (max-width: 1200px) {
             grid-template-columns: repeat(2, 1fr);
@@ -56,10 +61,14 @@
             @include flex(center, flex-start);
             flex-direction: column;
             opacity: 0;
+            visibility: hidden;
             transition: opacity .5s ease-in-out;
+            position: absolute;
 
             &.selected {
                 opacity: 1;
+                visibility: visible;
+                position: static;
                 transition: opacity .5s ease-in-out;
             }
 
