@@ -119,30 +119,47 @@ const buttonPortfolio = document.querySelectorAll('.portfolio__button-select');
 const buttonLoad = document.querySelector('.portfolio__button');
 
 const gallery = [...document.querySelectorAll('.portfolio__gallery')];
+const portfolioContainer = document.querySelector('.portfolio__container')
 
-function selectElement(target) {	
+
+loadingElements();	
+function selectElement(target) {
 	gallery.forEach(function(el) {
 		el = [...document.querySelectorAll('.portfolio__text p')];
 		el.filter(function(p) {
-			if(p.textContent.includes(target)) {
+			if((p.textContent.includes(target)) || (target.includes('All'))) {
 				p.parentNode.parentNode.classList.add('selected');
-			} else if (target.includes('All')) {
-				p.parentNode.parentNode.classList.add('selected');
-				buttonLoad.classList.add('selected');
 			} else {
 				p.parentNode.parentNode.classList.remove('selected');
-				buttonLoad.classList.remove('selected');
 			}
-		})
-		
+		})		
 	})
 }
 
 buttonPortfolio.forEach(button => button.addEventListener('click', (e) => {
-	const target = e.target.textContent
-	selectElement(target)
+	const target = e.target.textContent;
+	selectElement(target);
 	buttonPortfolio.forEach(el => el.classList.remove('selected'))
 	e.target.classList.toggle('selected')
+	loadingElements();
 }))
+
+buttonLoad.addEventListener('click', () => {
+	gallery.forEach(el => el.classList.add('selected'))
+})
+
+function loadingElements() {
+	const con = portfolioContainer.getBoundingClientRect()
+
+	gallery.forEach(el => {
+		const pos = el.getBoundingClientRect()
+		if(pos.top !== con.top) {
+			el.classList.remove('selected')
+			buttonLoad.classList.add('selected');
+		} else {
+			buttonLoad.classList.remove('selected');
+		}
+	})
+}
 
 
