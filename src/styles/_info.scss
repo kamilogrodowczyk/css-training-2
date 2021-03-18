@@ -33,7 +33,6 @@
         }
     
         .info__details {
-            // padding-left: 3rem;
     
             p {
                 position: relative;
@@ -53,7 +52,14 @@
                     display: block;
                     width: 1.2rem;
                     height: 1.2rem;
+                    transform: rotate(-180deg);
+                    transition: transform 1s ease-in-out;
                 }  
+
+                &.animated::before {
+                    transform: rotate(0deg);
+                    transition: transform 1s ease-in-out;
+                }
             }   
         }
     }

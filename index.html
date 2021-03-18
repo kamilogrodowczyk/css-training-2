@@ -11,52 +11,53 @@
 </head>
 <body>
     <header id="header">
-        <div class="header">
-            <div class="header__container">
-                <div class="header__left">
-                    <a class="header__logo" href="/">
-                        <img class="header__image" src="src/assets/logo.png" alt="waxom">
-                        Waxom
-                    </a>
-                </div>
-                <nav id="menu">
-                    <div class="nav">
-                        <ul class="nav__links">
-                            <li class="nav__link">
-                                <a href="">Home</a>
-                            </li>
-                            <li class="nav__link">
-                                <a href="">Portfolio</a>
-                            </li>
-                            <li class="nav__link">
-                                <a href="">Contact</a>
-                            </li> 
-                            <li class="nav__link">
-                                <form class="nav__search" action="">
-                                    <input class="nav__search--input" type="search" placeholder="Search in Google">                            
-                                    <button class="nav__search--button" type="submit">
-                                        <svg class="nav__icons-bag" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512.005 512.005"><path d="M505.749 475.587l-145.6-145.6c28.203-34.837 45.184-79.104 45.184-127.317C405.333 90.926 314.41.003 202.666.003S0 90.925 0 202.669s90.923 202.667 202.667 202.667c48.213 0 92.48-16.981 127.317-45.184l145.6 145.6c4.16 4.16 9.621 6.251 15.083 6.251s10.923-2.091 15.083-6.251c8.341-8.341 8.341-21.824-.001-30.165zM202.667 362.669c-88.235 0-160-71.765-160-160s71.765-160 160-160 160 71.765 160 160-71.766 160-160 160z"/></svg>
-                                    </button>                            
-                                </form>
-                            </li>                          
-                        </ul>
-                        
-                        <button class="nav__hamburger" aria-expanded="false">
-                            <span class="nav__hamburger-box">
-                              <span class="nav__hamburger-line"></span>
-                            </span>
-                        </button>
-                    </div>
-                </nav>
-            </div>
+        <div class="header animate">
+            
             <div class="hero__container">
                 <div class="hero__text">
-                    <h4>Unique and Modern Design</h4>
+                    <p class="h4">Unique and Modern Design</p>
                     <h1>Portfolio PSD Template</h1>
                     <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolore ullam veniam culpa tempora soluta? Fuga?</p>
-                    <!-- <button class="hero__button">Contact Us</button> -->
                 </div>
             </div>
+        </div>
+        <div class="header__container">
+            <div class="header__left">
+                <a class="header__logo" href="/">
+                    <img class="header__image" src="src/assets/logo.png" alt="firma waxom">
+                    Waxom
+                </a>
+            </div>
+            <nav id="menu">
+                <div class="nav">
+                    <ul class="nav__links">
+                        <li class="nav__link">
+                            <a href="">Home</a>
+                        </li>
+                        <li class="nav__link">
+                            <a href="">Portfolio</a>
+                        </li>
+                        <li class="nav__link">
+                            <a href="">Contact</a>
+                        </li> 
+                        <li class="nav__link">
+                            <form class="nav__search" action="">
+                                <label for="search" class="sr-only">Search in Google</label>
+                                <input class="nav__search--input" id="search" type="search" placeholder="Search in Google">                            
+                                <button class="nav__search--button" type="submit" aria-label="Show results in Google">
+                                    <svg class="nav__icons-bag" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512.005 512.005"><path d="M505.749 475.587l-145.6-145.6c28.203-34.837 45.184-79.104 45.184-127.317C405.333 90.926 314.41.003 202.666.003S0 90.925 0 202.669s90.923 202.667 202.667 202.667c48.213 0 92.48-16.981 127.317-45.184l145.6 145.6c4.16 4.16 9.621 6.251 15.083 6.251s10.923-2.091 15.083-6.251c8.341-8.341 8.341-21.824-.001-30.165zM202.667 362.669c-88.235 0-160-71.765-160-160s71.765-160 160-160 160 71.765 160 160-71.766 160-160 160z"/></svg>
+                                </button>                            
+                            </form>
+                        </li>                          
+                    </ul>
+                    
+                    <button class="nav__hamburger" aria-expanded="false">
+                        <span class="nav__hamburger-box">
+                          <span class="nav__hamburger-line"></span>
+                        </span>
+                    </button>
+                </div>
+            </nav>
         </div>
     </header>
     <main>
@@ -146,8 +147,8 @@
                     <div class="portfolio__button-select selected">All</div>
                     <div class="portfolio__button-select">Web Design</div>
                     <div class="portfolio__button-select">Mobile App</div>
-                    <div class="portfolio__button-select">Graphic Design</div>
                     <div class="portfolio__button-select">Photography</div>
+                    <div class="portfolio__button-select">Graphic Design</div>
                 </div>
                 <div class="portfolio__container">
                     <div class="portfolio__gallery selected">
@@ -214,10 +215,10 @@
                         <h4>Excellent for Mobile Devices.</h4>
                         <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repudiandae dolor quisquam exercitationem ducimus esse explicabo voluptate ullam, quibusdam corporis dolore obcaecati eius culpa mollitia ipsam dolores natus inventore tempore in.</p>
                         <div class="info__details">
-                            <p>Lorem ipsum dolor sit amet consectetur.</p>
-                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing.</p>
-                            <p>Lorem ipsum dolor sit amet consectetur.</p>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint.</p>
+                            <p class="animate">Lorem ipsum dolor sit amet consectetur.</p>
+                            <p class="animate">Lorem ipsum dolor sit, amet consectetur adipisicing.</p>
+                            <p class="animate">Lorem ipsum dolor sit amet consectetur.</p>
+                            <p class="animate">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint.</p>
                         </div>
                     </div>
                 </div>
@@ -250,7 +251,7 @@
                                     c13.675,0,27.029,3.712,38.635,10.752c5.013,3.051,11.584,1.451,14.656-3.584C152.363,322.133,150.741,315.584,145.707,312.512z"
                                     />
                             </svg>
-                            <h2 class="info__number">3000</h2>
+                            <h2 class="info__number numbers__result" data-target="3000">0</h2>
                             <p class="info__number-text">Satisfied clients</p>
                         </div>
                         <div class="info__data">
@@ -285,26 +286,26 @@
                                     c2.112,2.645,5.205,4.011,8.341,4.011c2.325,0,4.693-0.768,6.656-2.325c4.608-3.691,5.355-10.411,1.664-14.997
                                     C189.343,150.259,189.343,127.091,200.372,113.331z"/>
                                 </svg>
-                            <h2 class="info__number">207</h2>
+                            <h2 class="info__number numbers__result" data-target="207">0</h2>
                             <p class="info__number-text">Cups of coffee</p>
                         </div>
                         <div class="info__data">
                             <svg class="info__icon" viewBox="0 -26 512 512" xmlns="http://www.w3.org/2000/svg"><path d="m256 100c-5.519531 0-10 4.480469-10 10s4.480469 10 10 10 10-4.480469 10-10-4.480469-10-10-10zm0 0"/><path d="m90 280c5.519531 0 10-4.480469 10-10s-4.480469-10-10-10-10 4.480469-10 10 4.480469 10 10 10zm0 0"/><path d="m336 0c-90.027344 0-163.917969 62.070312-169.632812 140.253906-85.738282 4.300782-166.367188 66.125-166.367188 149.746094 0 34.945312 13.828125 68.804688 39 95.632812 4.980469 20.53125-1.066406 42.292969-16.070312 57.296876-2.859376 2.859374-3.714844 7.160156-2.167969 10.898437 1.546875 3.734375 5.191406 6.171875 9.238281 6.171875 28.519531 0 56.003906-11.183594 76.425781-30.890625 19.894531 6.78125 45.851563 10.890625 69.574219 10.890625 90.015625 0 163.898438-62.054688 169.628906-140.222656 20.9375-.929688 42.714844-4.796875 59.945313-10.667969 20.421875 19.707031 47.90625 30.890625 76.425781 30.890625 4.046875 0 7.691406-2.4375 9.238281-6.171875 1.546875-3.738281.691407-8.039063-2.167969-10.898437-15.003906-15.003907-21.050781-36.765626-16.070312-57.296876 25.171875-26.828124 39-60.6875 39-95.632812 0-86.886719-86.839844-150-176-150zm-160 420c-23.601562 0-50.496094-4.632812-68.511719-11.800781-3.859375-1.539063-8.269531-.527344-11.078125 2.539062-12.074218 13.199219-27.773437 22.402344-44.878906 26.632813 9.425781-18.058594 11.832031-39.347656 6.097656-59.519532-.453125-1.589843-1.292968-3.042968-2.445312-4.226562-22.6875-23.367188-35.183594-53.066406-35.183594-83.625 0-70.46875 71.4375-130 156-130 79.851562 0 150 55.527344 150 130 0 71.683594-67.289062 130-150 130zm280.816406-186.375c-1.152344 1.1875-1.992187 2.640625-2.445312 4.226562-5.734375 20.171876-3.328125 41.460938 6.097656 59.519532-17.105469-4.226563-32.804688-13.433594-44.878906-26.632813-2.808594-3.0625-7.21875-4.078125-11.078125-2.539062-15.613281 6.210937-37.886719 10.511719-58.914063 11.550781-2.921875-37.816406-21.785156-73.359375-54.035156-99.75h130.4375c5.523438 0 10-4.476562 10-10s-4.476562-10-10-10h-161.160156c-22.699219-11.554688-48.1875-18.292969-74.421875-19.707031 5.746093-67.164063 70.640625-120.292969 149.582031-120.292969 84.5625 0 156 59.53125 156 130 0 30.558594-12.496094 60.257812-35.183594 83.625zm0 0"/><path d="m256 260h-126c-5.523438 0-10 4.476562-10 10s4.476562 10 10 10h126c5.523438 0 10-4.476562 10-10s-4.476562-10-10-10zm0 0"/><path d="m256 320h-166c-5.523438 0-10 4.476562-10 10s4.476562 10 10 10h166c5.523438 0 10-4.476562 10-10s-4.476562-10-10-10zm0 0"/><path d="m422 100h-126c-5.523438 0-10 4.476562-10 10s4.476562 10 10 10h126c5.523438 0 10-4.476562 10-10s-4.476562-10-10-10zm0 0"/>
                             </svg>
-                            <h2 class="info__number">2500</h2>
+                            <h2 class="info__number numbers__result" data-target="2500">0</h2>
                             <p class="info__number-text">Blog posts</p>
                         </div>
                         <div class="info__data">
                             <svg class="info__icon" viewBox="0 -28 512.001 512" xmlns="http://www.w3.org/2000/svg"><path d="m256 455.515625c-7.289062 0-14.316406-2.640625-19.792969-7.4375-20.683593-18.085937-40.625-35.082031-58.21875-50.074219l-.089843-.078125c-51.582032-43.957031-96.125-81.917969-127.117188-119.3125-34.644531-41.804687-50.78125-81.441406-50.78125-124.742187 0-42.070313 14.425781-80.882813 40.617188-109.292969 26.503906-28.746094 62.871093-44.578125 102.414062-44.578125 29.554688 0 56.621094 9.34375 80.445312 27.769531 12.023438 9.300781 22.921876 20.683594 32.523438 33.960938 9.605469-13.277344 20.5-24.660157 32.527344-33.960938 23.824218-18.425781 50.890625-27.769531 80.445312-27.769531 39.539063 0 75.910156 15.832031 102.414063 44.578125 26.191406 28.410156 40.613281 67.222656 40.613281 109.292969 0 43.300781-16.132812 82.9375-50.777344 124.738281-30.992187 37.398437-75.53125 75.355469-127.105468 119.308594-17.625 15.015625-37.597657 32.039062-58.328126 50.167969-5.472656 4.789062-12.503906 7.429687-19.789062 7.429687zm-112.96875-425.523437c-31.066406 0-59.605469 12.398437-80.367188 34.914062-21.070312 22.855469-32.675781 54.449219-32.675781 88.964844 0 36.417968 13.535157 68.988281 43.882813 105.605468 29.332031 35.394532 72.960937 72.574219 123.476562 115.625l.09375.078126c17.660156 15.050781 37.679688 32.113281 58.515625 50.332031 20.960938-18.253907 41.011719-35.34375 58.707031-50.417969 50.511719-43.050781 94.136719-80.222656 123.46875-115.617188 30.34375-36.617187 43.878907-69.1875 43.878907-105.605468 0-34.515625-11.605469-66.109375-32.675781-88.964844-20.757813-22.515625-49.300782-34.914062-80.363282-34.914062-22.757812 0-43.652344 7.234374-62.101562 21.5-16.441406 12.71875-27.894532 28.796874-34.609375 40.046874-3.453125 5.785157-9.53125 9.238282-16.261719 9.238282s-12.808594-3.453125-16.261719-9.238282c-6.710937-11.25-18.164062-27.328124-34.609375-40.046874-18.449218-14.265626-39.34375-21.5-62.097656-21.5zm0 0"/>
                             </svg>
-                            <h2 class="info__number">873</h2>
+                            <h2 class="info__number numbers__result" data-target="873">0</h2>
                             <p class="info__number-text">Likes</p>
                         </div>
                         <div class="info__data">
                             <?xml version="1.0"?>
                             <svg class="info__icon" xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512"><g><path d="M487.86,360.38A232.026,232.026,0,0,0,288,138.19V120a8,8,0,0,0-8-8H232a8,8,0,0,0-8,8v18.19A232.026,232.026,0,0,0,24.14,360.38,20,20,0,0,0,28,400H484a20,20,0,0,0,3.86-39.62ZM240,128h32v8.55q-7.95-.54-16-.55t-16,.55ZM103.27,215.26a214.365,214.365,0,0,1,129.49-62.02c.05,0,.09-.01.13-.01a217.717,217.717,0,0,1,46.22,0c.04,0,.08.01.13.01A216.007,216.007,0,0,1,471.84,360H40.16A214.478,214.478,0,0,1,103.27,215.26ZM484,384H28a4,4,0,0,1,0-8H484a4,4,0,0,1,0,8Z"/><path d="M85.68,278.925a8,8,0,0,0,10.931-2.919A183.926,183.926,0,0,1,256,184a8,8,0,0,0,0-16A199.93,199.93,0,0,0,82.761,267.994,8,8,0,0,0,85.68,278.925Z"/></g>
                             </svg>
-                            <h2 class="info__number">900</h2>
+                            <h2 class="info__number numbers__result" data-target="900">0</h2>
                             <p class="info__number-text">We launched</p>
                         </div>
                     </div>
@@ -322,7 +323,7 @@
                     </div>
                 </header>
                 <div class="posts__container">
-                    <div class="posts__post">
+                    <div class="posts__post animate">
                         <div class="posts__image" style="background-image: url(src/assets/mountains.jpg);">
                             <div class="posts__image-date">
                                 <div class="posts__image-day" data-attribute="Sep.">30</div>                                
@@ -336,7 +337,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="posts__post">
+                    <div class="posts__post animate">
                         <div class="posts__image" style="background-image: url(src/assets/sun.jpg);">
                             <div class="posts__image-date">
                                 <div class="posts__image-day" data-attribute="Sep.">30</div>                               
@@ -350,7 +351,7 @@
                             </div>
                         </div>                        
                     </div>
-                    <div class="posts__post">
+                    <div class="posts__post animate">
                         <div class="posts__image" style="background-image: url(src/assets/silence.jpg);">
                             <div class="posts__image-date">
                                 <div class="posts__image-day" data-attribute="Sep.">30</div>                                
@@ -381,9 +382,6 @@
                             <img src="src/assets/logo3.svg" height="100" width="250" alt="" />
                         </div>
                         <div class="slide">
-                            <img src="src/assets/logo4.svg" height="100" width="250" alt="" />
-                        </div>
-                        <div class="slide">
                             <img src="src/assets/logo5.svg" height="100" width="250" alt="" />
                         </div>
                         <div class="slide">
@@ -399,9 +397,6 @@
                         
                         <div class="slide">
                             <img src="src/assets/logo3.svg" height="100" width="250" alt="" />
-                        </div>
-                        <div class="slide">
-                            <img src="src/assets/logo4.svg" height="100" width="250" alt="" />
                         </div>
                         <div class="slide">
                             <img src="src/assets/logo5.svg" height="100" width="250" alt="" />
@@ -431,6 +426,6 @@
         </div>
     </footer>
 
-    <script src="src/js/index.js"></script>
+    <script type="module" src="src/js/index.js"></script>
 </body>
 </html>
